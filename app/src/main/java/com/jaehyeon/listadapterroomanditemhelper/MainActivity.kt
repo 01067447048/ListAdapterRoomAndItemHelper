@@ -19,4 +19,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
+
+    override fun onBackPressed() {
+        navController.currentDestination ?: return
+
+        if (navController.currentDestination?.id == R.id.personsFragment) finish()
+        else super.onBackPressed()
+
+    }
 }
