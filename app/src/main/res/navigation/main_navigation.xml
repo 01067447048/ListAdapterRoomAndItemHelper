@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/personsFragment">
+
+    <fragment
+        android:id="@+id/personsFragment"
+        android:name="com.jaehyeon.listadapterroomanditemhelper.presentation.ui.list.PersonsFragment"
+        android:label="PersonsFragment" >
+        <action
+            android:id="@+id/action_personsFragment_to_addPersonFragment"
+            app:destination="@id/addPersonFragment" />
+        <action
+            android:id="@+id/action_personsFragment_to_detailPersonFragment"
+            app:destination="@id/detailPersonFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPersonFragment"
+        android:name="com.jaehyeon.listadapterroomanditemhelper.presentation.ui.add.AddPersonFragment"
+        android:label="AddPersonFragment" >
+        <action
+            android:id="@+id/action_addPersonFragment_to_personsFragment"
+            app:destination="@id/personsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailPersonFragment"
+        android:name="com.jaehyeon.listadapterroomanditemhelper.presentation.ui.detail.DetailPersonFragment"
+        android:label="DetailPersonFragment">
+        <argument
+            android:name="person_id"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>
